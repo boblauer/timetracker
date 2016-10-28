@@ -29,7 +29,6 @@
     }
 
     if (!hasRow) {
-      alert('kk');
       new Row();
     }
   }
