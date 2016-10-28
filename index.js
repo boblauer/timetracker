@@ -19,11 +19,19 @@
 
   function load() {
     var js = localStorage.getItem('d');
-    if (!js) return;
+    var hasRow = false;
 
-    JSON.parse(js).forEach(function(data) {
-      new Row(data.v, data.t);
-    });
+    if (js) {
+      JSON.parse(js).forEach(function(data) {
+        hasRow = true;
+        new Row(data.v, data.t);
+      });
+    }
+
+    if (!hasRow) {
+      alert('kk');
+      new Row();
+    }
   }
 
   function Row(title, time) {
